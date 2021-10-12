@@ -1,0 +1,23 @@
+# pipeline
+gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/controller: docker.io/tektondev/pipeline-controller
+gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/kubeconfigwriter: docker.io/tektondev/pipeline-kubeconfigwriter
+gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/entrypoint: docker.io/tektondev/pipeline-entrypoint
+gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/git-init: docker.io/tektondev/pipeline-git-init
+gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/nop: docker.io/tektondev/pipeline-nop
+gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/imagedigestexporter: docker.io/tektondev/pipeline-imagedigestexporter
+gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/pullrequest-init: docker.io/tektondev/pipeline-pullrequest-init
+gcr.io/tekton-releases/github.com/tektoncd/pipeline/vendor/github.com/googlecloudplatform/cloud-builders/gcs-fetcher/cmd/gcs-fetcher: docker.io/tektondev/pipeline-gcs-fetcher
+gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/webhook: docker.io/tektondev/pipeline-webhook
+
+# dashboard
+gcr.io/tekton-releases/github.com/tektoncd/dashboard/cmd/dashboard: docker.io/tektondev/dashboard-dashboard
+
+# trigger
+gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/controller: docker.io/tektondev/triggers-controller
+gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/eventlistenersink: docker.io/tektondev/trigger-eventlistenersink
+gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/webhook: docker.io/tektondev/trigger-webhook
+gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/interceptors: docker.io/tektondev/trigger-interceptors
+
+# tools
+gcr.io/google.com/cloudsdktool/cloud-sdk: docker.io/tektondev/cloudsdktool-cloud-sdk
+gcr.io/distroless/base: docker.io/tektondev/distroless-base

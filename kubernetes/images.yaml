@@ -1,0 +1,11 @@
+# metrics-server
+k8s.gcr.io/metrics-server/metrics-server: docker.io/k8simage/metrics-server
+
+# kubernetes
+k8s.gcr.io/kube-apiserver: docker.io/k8simage/kube-apiserver
+k8s.gcr.io/kube-controller-manager: docker.io/k8simage/kube-controller-manager
+k8s.gcr.io/kube-scheduler: docker.io/k8simage/kube-scheduler
+k8s.gcr.io/kube-proxy: docker.io/k8simage/kube-proxy
+k8s.gcr.io/pause: docker.io/k8simage/pause
+k8s.gcr.io/etcd: docker.io/k8simage/etcd
+k8s.gcr.io/coredns: docker.io/k8simage/coredns
