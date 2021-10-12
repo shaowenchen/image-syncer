@@ -1772,19 +1772,19 @@ spec:
       serviceAccountName: tekton-pipelines-controller
       containers:
         - name: tekton-pipelines-controller
-          image: tektondev/controller:v0.25.0
+          image: tektondev/pipeline-controller:v0.25.0
           args: [
             # Version, to be replace at release time
             "-version", "v0.25.0",
             # These images are built on-demand by `ko resolve` and are replaced
             # by image references by digest.
-            "-kubeconfig-writer-image", "tektondev/kubeconfigwriter:v0.25.0", "-git-image", "tektondev/git-init:v0.25.0", "-entrypoint-image", "tektondev/entrypoint:v0.25.0", "-nop-image", "tektondev/nop:v0.25.0", "-imagedigest-exporter-image", "tektondev/imagedigestexporter:v0.25.0", "-pr-image", "tektondev/pullrequest-init:v0.25.0@",
+            "-kubeconfig-writer-image", "tektondev/pipeline-kubeconfigwriter:v0.25.0", "-git-image", "tektondev/pipeline-git-init:v0.25.0", "-entrypoint-image", "tektondev/pipeline-entrypoint:v0.25.0", "-nop-image", "tektondev/pipeline-nop:v0.25.0", "-imagedigest-exporter-image", "tektondev/pipeline-imagedigestexporter:v0.25.0", "-pr-image", "tektondev/pipeline-pullrequest-init:v0.25.0@",
             # This is gcr.io/google.com/cloudsdktool/cloud-sdk:302.0.0-slim
-            "-gsutil-image", "cloudsdktooldev/cloud-sdk:302.0.0-slim",
+            "-gsutil-image", "tektondev/cloudsdktool-cloud-sdk:302.0.0-slim",
             # The shell image must be root in order to create directories and copy files to PVCs.
             # gcr.io/distroless/base:debug as of Apirl 17, 2021
             # image shall not contains tag, so it will be supported on a runtime like cri-o
-            "-shell-image", "distrolessdev/base:debug"]
+            "-shell-image", "tektondev/distroless-base:debug"]
           volumeMounts:
             - name: config-logging
               mountPath: /etc/config-logging
@@ -2008,7 +2008,7 @@ spec:
         - name: webhook
           # This is the Go import path for the binary that is containerized
           # and substituted here.
-          image: tektondev/webhook:v0.25.0
+          image: tektondev/pipeline-webhook:v0.25.0
           # Resource request required for autoscaler to take any action for a metric
           resources:
             requests:

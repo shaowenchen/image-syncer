@@ -363,7 +363,7 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: metadata.namespace
-          image: tektondev/dashboard:v0.18.0
+          image: tektondev/dashboard-dashboard:v0.18.0
           livenessProbe:
             httpGet:
               path: /health

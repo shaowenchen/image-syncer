@@ -1074,7 +1074,7 @@ spec:
       containers:
         - name: tekton-triggers-controller
           image: "tektondev/triggers-controller:v0.14.1"
-          args: ["-logtostderr", "-stderrthreshold", "INFO", "-el-image", "tektondev/eventlistenersink:v0.14.1", "-el-port", "8080", "-el-readtimeout", "5", "-el-writetimeout", "40", "-el-idletimeout", "120", "-el-timeouthandler", "30", "-period-seconds", "10", "-failure-threshold", "1"]
+          args: ["-logtostderr", "-stderrthreshold", "INFO", "-el-image", "tektondev/trigger-eventlistenersink:v0.14.1", "-el-port", "8080", "-el-readtimeout", "5", "-el-writetimeout", "40", "-el-idletimeout", "120", "-el-timeouthandler", "30", "-period-seconds", "10", "-failure-threshold", "1"]
           env:
             - name: SYSTEM_NAMESPACE
               valueFrom:

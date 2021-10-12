@@ -1,10 +1,9 @@
-name: Kubernetes Image Sync
+name: Kubernetes
 
 on:
   schedule:
-    - cron:  '0 */1 * * *'
+    - cron:  '5 1 * * *'
   workflow_dispatch:
-  push:
 jobs:
   build:
     name: Image Sync
@@ -19,4 +18,4 @@ jobs:
           sed -i 's/DOCKERHUB_USERNAME/${{ secrets.DOCKERHUB_USERNAME }}/' ./auth.yaml
           sed -i 's/DOCKERHUB_PASSWORD/${{ secrets.DOCKERHUB_PASSWORD }}/' ./auth.yaml
       - name: Working
-        run: ./.github/workflows/sync.sh ./kubernetes/images.yaml
+        run: bash ./.github/workflows/sync.sh ./kubernetes/images.yaml

@@ -1,10 +1,9 @@
-name: Tekton Image Sync
+name: Tekton
 
 on:
   schedule:
-    - cron:  '0 */2 * * *'
+    - cron:  '5 2 * * *'
   workflow_dispatch:
-  push:
 jobs:
   build:
     name: Image Sync
@@ -19,4 +18,4 @@ jobs:
           sed -i 's/DOCKERHUB_USERNAME/${{ secrets.DOCKERHUB_USERNAME }}/' ./auth.yaml
           sed -i 's/DOCKERHUB_PASSWORD/${{ secrets.DOCKERHUB_PASSWORD }}/' ./auth.yaml
       - name: Working
-        run: ./.github/workflows/sync.sh ./tekton/images.yaml
+        run: bash ./.github/workflows/sync.sh ./tekton/images.yaml

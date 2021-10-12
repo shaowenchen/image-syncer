@@ -1704,15 +1704,15 @@ spec:
       serviceAccountName: tekton-pipelines-controller
       containers:
         - name: tekton-pipelines-controller
-          image: tektondev/controller:v0.24.1
+          image: tektondev/pipeline-controller:v0.24.1
           args: [
             # Version, to be replace at release time
             "-version", "v0.24.1",
             # These images are built on-demand by `ko resolve` and are replaced
             # by image references by digest.
-            "-kubeconfig-writer-image", "tektondev/kubeconfigwriter:v0.24.1", "-git-image", "tektondev/git-init:v0.24.1", "-entrypoint-image", "tektondev/entrypoint:v0.24.1", "-nop-image", "tektondev/nop:v0.24.1", "-imagedigest-exporter-image", "tektondev/imagedigestexporter:v0.24.1", "-pr-image", "tektondev/pullrequest-init:v0.24.1",
-            "-gsutil-image", "cloudsdktooldev/cloud-sdk:302.0.0-slim",
-            "-shell-image", "distrolessdev/base:debug"]
+            "-kubeconfig-writer-image", "tektondev/pipeline-kubeconfigwriter:v0.24.1", "-git-image", "tektondev/pipeline-git-init:v0.24.1", "-entrypoint-image", "tektondev/pipeline-entrypoint:v0.24.1", "-nop-image", "tektondev/pipeline-nop:v0.24.1", "-imagedigest-exporter-image", "tektondev/pipeline-imagedigestexporter:v0.24.1", "-pr-image", "tektondev/pipeline-pullrequest-init:v0.24.1",
+            "-gsutil-image", "tektondev/cloudsdktool-cloud-sdk:302.0.0-slim",
+            "-shell-image", "tektondev/distroless-base:debug"]
           volumeMounts:
             - name: config-logging
               mountPath: /etc/config-logging
@@ -1936,7 +1936,7 @@ spec:
         - name: webhook
           # This is the Go import path for the binary that is containerized
           # and substituted here.
-          image: tektondev/webhook:v0.24.1
+          image: tektondev/pipeline-webhook:v0.24.1
           # Resource request required for autoscaler to take any action for a metric
           resources:
             requests:
