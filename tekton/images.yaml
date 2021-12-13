@@ -21,3 +21,6 @@ gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/interceptors: docker.io/
 # tools
 gcr.io/google.com/cloudsdktool/cloud-sdk: docker.io/tektondev/cloudsdktool-cloud-sdk
 gcr.io/distroless/base: docker.io/tektondev/distroless-base
+
+# catalog
+gcr.io/cloud-builders/kubectl: docker.io/tektondev/cloud-builder-kubectl
