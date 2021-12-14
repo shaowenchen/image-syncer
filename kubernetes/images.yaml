@@ -1,5 +1,6 @@
-# metrics-server
+# metrics
 k8s.gcr.io/metrics-server/metrics-server: docker.io/k8simage/metrics-server
+k8s.gcr.io/kube-state-metrics/kube-state-metrics: docker.io/k8simage/kube-state-metrics
 
 # kubernetes
 k8s.gcr.io/kube-apiserver: docker.io/k8simage/kube-apiserver
