@@ -9,4 +9,4 @@ k8s.gcr.io/kube-scheduler: docker.io/k8simage/kube-scheduler
 k8s.gcr.io/kube-proxy: docker.io/k8simage/kube-proxy
 k8s.gcr.io/pause: docker.io/k8simage/pause
 k8s.gcr.io/etcd: docker.io/k8simage/etcd
-k8s.gcr.io/coredns: docker.io/k8simage/coredns
+k8s.gcr.io/coredns/coredns: docker.io/k8simage/coredns
