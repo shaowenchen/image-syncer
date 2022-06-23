@@ -1,0 +1,5 @@
+docker.io/elasticsearch: docker.io/k8simage/elasticsearch
+docker.io/logstash: docker.io/k8simage/logstash
+docker.io/elastic/filebeat: docker.io/k8simage/filebeat
+docker.io/elastic/kibana: docker.io/k8simage/kibana
+docker.io/elastic/metricbeat: docker.io/k8simage/metricbeat

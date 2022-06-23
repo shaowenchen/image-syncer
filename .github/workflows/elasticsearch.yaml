@@ -1,0 +1,21 @@
+name: Elasticsearch
+
+on:
+  schedule:
+    - cron:  '5 3 * * *'
+  workflow_dispatch:
+jobs:
+  build:
+    name: Image Sync
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code into the Go module directory
+        uses: actions/checkout@v2
+      - name: Install tool
+        run: wget https://github.com/AliyunContainerService/image-syncer/releases/download/v1.3.0/image-syncer-v1.3.0-linux-amd64.tar.gz -O - | tar -xz
+      - name: Setup Secret
+        run: |
+          sed -i 's/DOCKERHUB_USERNAME/${{ secrets.DOCKERHUB_USERNAME }}/' ./auth.yaml
+          sed -i 's/DOCKERHUB_PASSWORD/${{ secrets.DOCKERHUB_PASSWORD }}/' ./auth.yaml
+      - name: Working
+        run: bash ./.github/workflows/sync.sh ./elasticsearch/images.yaml
